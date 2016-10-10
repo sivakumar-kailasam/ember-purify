@@ -4,11 +4,29 @@
 [![Ember Observer Score](http://emberobserver.com/badges/ember-purify.svg)](http://emberobserver.com/addons/ember-purify)
 ![Ember Version][ember-version]
 
-This README outlines the details of collaborating on this Ember addon.
+When you need to render user provided HTML content but don't want to trust the user content with Ember's ` Ember.String.htmlSafe` or `{{{  }}}`.
+Uses [DOMPurify] (https://github.com/cure53/DOMPurify/) to sanitize HTML & SVG. I strongly recommend you watch the video linked under the [inspiration](#inspiration) section. See XSS in action in Ember in [this twiddle](https://ember-twiddle.com/e41681e00585f3c94b461e349fee9ca1?fileTreeShown=false&numColumns=2&openFiles=templates.application.hbs%2Ccontrollers.application.js).
 
 ## Inspiration
 [Securing your EmberJS Application talk](https://www.websec.be/blog/emberjsmeetup-security/) By Philippe De Ryck.
 
+## Usage 
+```handlebars
+{{purify-dom '<img src="missing-image.png" onerror=alert(1)//>'}}
+```
+will render
+```html
+<img src="missing-image.png">
+```
+Details on DOMPurify, the underlying library can be found in its [README](https://github.com/cure53/DOMPurify/blob/master/README.md)
+
+## Configuration
+To configure the purify helper globally in your app's `config/environment.js`,
+```js
+ENV.APP.purify = {
+  // Refer to various config options in DOMPurify's README
+};
+```
 
 ## Installation
 
@@ -35,4 +53,3 @@ This README outlines the details of collaborating on this Ember addon.
 For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
 
 [ember-version]: https://embadge.io/v1/badge.svg?start=1.13.0
-

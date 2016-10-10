@@ -1,7 +1,13 @@
 import Ember from 'ember';
 
-export function purifyDom([ text=''  ]/*, hash*/) {
-  return Ember.String.htmlSafe(DOMPurify.sanitize(text));
-}
+const { Helper, String: { htmlSafe } } = Ember;
+const { sanitize } = DOMPurify;
 
-export default Ember.Helper.helper(purifyDom);
+export default Helper.extend({
+
+  compute([ text=''  ]/*, hash*/) {
+    const purifyConfig = this.get('config');
+    return htmlSafe(sanitize(text, purifyConfig));
+  }
+
+});
