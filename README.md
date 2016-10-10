@@ -7,6 +7,8 @@
 When you need to render user provided HTML content but don't want to trust the user content with Ember's ` Ember.String.htmlSafe` or `{{{  }}}`.
 Uses [DOMPurify](https://github.com/cure53/DOMPurify/) to sanitize HTML & SVG. I strongly recommend you watch the video linked under the [inspiration](#inspiration) section. See XSS in action in Ember in [this twiddle](https://ember-twiddle.com/e41681e00585f3c94b461e349fee9ca1?fileTreeShown=false&numColumns=2&openFiles=templates.application.hbs%2Ccontrollers.application.js).
 
+You can also run `ember serve` to see the above mentioned approaches along with the `purify-dom` helper. Inspect the DOM on all three broken images to see the difference.
+
 ## Installation
 ```shell
 ember install ember-purify
