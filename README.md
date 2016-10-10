@@ -6,6 +6,10 @@
 
 This README outlines the details of collaborating on this Ember addon.
 
+## Inspiration
+[Securing your EmberJS Application talk](https://www.websec.be/blog/emberjsmeetup-security/) By Philippe De Ryck.
+
+
 ## Installation
 
 * `git clone <repository-url>` this repository
