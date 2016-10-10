@@ -7,6 +7,9 @@ install:
   - npm install
   - bower install
 
+# So that we don't build twice
+skip_tags: true
+
 cache:
   - '%APPDATA%\npm-cache'
   - '%APPDATA%\Roaming\bower'
