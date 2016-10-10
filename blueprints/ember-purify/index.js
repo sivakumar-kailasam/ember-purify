@@ -1,7 +1,7 @@
 /*jshint node:true*/
 module.exports = {
   normalizeEntityName: function() {},
-  afterinstall: function(options) {
+  afterInstall: function() {
     return this.addBowerPackageToProject('DOMPurify', '^0.8.3');
   }
 };
