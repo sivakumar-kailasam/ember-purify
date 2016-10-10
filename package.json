@@ -1,6 +1,6 @@
 {
   "name": "ember-purify",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Ember addon to help purify DOM content",
   "directories": {
     "test": "tests"
