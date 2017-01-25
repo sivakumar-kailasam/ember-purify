@@ -1,4 +1,6 @@
 # Ember-purify
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sivakumar-kailasam/ember-purify.svg)](https://greenkeeper.io/)
 [![Travis CI Build Status](https://travis-ci.org/sivakumar-kailasam/ember-purify.svg?branch=master)](https://travis-ci.org/sivakumar-kailasam/ember-purify) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/h4kt3xi6axr4c3ep/branch/master?svg=true)](https://ci.appveyor.com/project/sivakumar-kailasam/ember-purify/branch/master) [![Dependency Status](https://www.versioneye.com/user/projects/57fc8eca9907da00390c4167/badge.svg)](https://www.versioneye.com/user/projects/57fc8eca9907da00390c4167) [![Ember Observer Score](http://emberobserver.com/badges/ember-purify.svg)](http://emberobserver.com/addons/ember-purify) ![Ember Version][ember-version] 
 
 When you need to render user provided HTML content but don't want to trust the user content with Ember's ` Ember.String.htmlSafe` or `{{{  }}}`.
