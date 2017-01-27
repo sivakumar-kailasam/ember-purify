@@ -11,7 +11,7 @@
     "test": "ember try:each"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.12.0"
   },
   "author": "Sivakumar Kailasam <sivakumar.ur.friend@gmail.com>",
   "license": "MIT",
@@ -23,15 +23,16 @@
     "ember-cli-eslint": "3.0.2",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
-    "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-qunit": "^3.0.4",
+    "ember-cli-inject-live-reload": "^1.6.1",
+    "ember-cli-qunit": "^3.1.0",
     "ember-cli-release": "1.0.0-beta.2",
+    "ember-cli-shims": "^1.0.2",
     "ember-cli-test-loader": "^1.1.1",
     "ember-cli-uglify": "^1.2.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.1.1",
     "ember-load-initializers": "^0.6.3",
-    "ember-resolver": "^2.1.0",
+    "ember-resolver": "^2.1.1",
     "loader.js": "^4.1.0"
   },
   "keywords": [
