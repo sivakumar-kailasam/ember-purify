@@ -1,9 +1,8 @@
 # http://www.appveyor.com/docs/appveyor-yml
 
 install:
-  - npm install phantomjs-prebuilt
   - npm install mocha-appveyor-reporter
-  - npm install -g bower
+  - npm install -g bower phantomjs-prebuilt
   - npm install
   - bower install
 
