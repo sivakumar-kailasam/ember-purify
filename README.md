@@ -21,6 +21,7 @@ will render
 ```html
 <img src="missing-image.png">
 ```
+If you need to use DOMPurify in your js, you can refer to the `DOMPurify` global object that's imported for you by this addon.
 Details on DOMPurify, the underlying library can be found in its [README](https://github.com/cure53/DOMPurify/blob/master/README.md)
 
 ## Configuration
