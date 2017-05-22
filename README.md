@@ -30,6 +30,10 @@ ENV.APP.purify = {
   // Refer to various config options in DOMPurify's README
 };
 ```
+In addition to the global configuration you can also pass the config to the helper which can either be merged to the global config(by default) or replaced(by passing overrideConfig=true)
+```handlebars
+{{purify-dom "<img src='google.com' data-something='dangerous'>" config=(hash ALLOW_DATA_ATTR=false) overrideConfig=true}}
+```
 
 ## Inspiration
 [Securing your EmberJS Application talk](https://www.websec.be/blog/emberjsmeetup-security/) By Philippe De Ryck.

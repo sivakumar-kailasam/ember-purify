@@ -1,9 +1,16 @@
+The following are image tags with an invalid image url which will trigger its <code>onerror()</code> when available,
+
 <div>
-this is a broken image, {{{htmlContent}}}
+  Added to page via triple {} - {{{htmlContent}}}
 </div>
 <div>
-this is another broken image {{safeStringContent}}
+  Added to page via safeString - {{safeStringContent}}
 </div>
 <div>
-this is a broken image, but pure  {{purify-dom htmlContent}}
+  Added to page with dom purify - {{purify-dom htmlContent}}
+</div>
+
+<div>
+  In addition to the global config, you can now additionally pass a config hash,
+  {{purify-dom htmlContent config=customConfig overrideConfig=true}}
 </div>

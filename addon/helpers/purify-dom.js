@@ -1,13 +1,27 @@
 import Ember from 'ember';
 
-const { Helper, String: { htmlSafe } } = Ember;
+const {
+    isPresent,
+    merge,
+    Helper,
+    String: { htmlSafe }
+} = Ember;
 const { sanitize } = DOMPurify;
 
 export default Helper.extend({
 
-  compute([ text=''  ]/*, hash*/) {
-    const purifyConfig = this.get('config');
-    return htmlSafe(sanitize(text, purifyConfig));
-  }
+    compute([text = ''], { config: localConfig, overrideConfig = false }) {
+        let purifyConfig = this.get('config');
+
+        if (isPresent(localConfig)) {
+            if (overrideConfig) {
+                purifyConfig = localConfig;
+            } else {
+                purifyConfig = merge(localConfig, purifyConfig);
+            }
+        }
+
+        return htmlSafe(sanitize(text, purifyConfig));
+    }
 
 });
