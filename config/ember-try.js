@@ -1,4 +1,4 @@
-/*eslint node:true*/
+/* eslint-env node */
 module.exports = {
   scenarios: [
     {
@@ -81,5 +81,11 @@ module.exports = {
         }
       }
     },
+    {
+      name: 'ember-default',
+      npm: {
+        devDependencies: {}
+      }
+    }
   ]
 };

@@ -1,6 +1,0 @@
-{
-  "name": "ember-purify",
-  "dependencies": {
-    "DOMPurify": "^0.8.4"
-  }
-}

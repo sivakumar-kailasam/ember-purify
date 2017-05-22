@@ -1,4 +1,4 @@
-/* eslint node: true */
+/* eslint-env node */
 'use strict';
 var path = require('path');
 
@@ -6,16 +6,21 @@ var path = require('path');
 module.exports = {
   name: 'ember-purify',
 
-  included: function included(app) {
+  included: function(app) {
     this._super.included.apply(this, arguments);
 
-    var domPurifyScript = 'DOMPurify/src/purify.js';
-    if (app.env === 'production') {
-      domPurifyScript = 'DOMPurify/dist/purify.min.js';
-    }
-    app.import(path.join(app.bowerDirectory, domPurifyScript));
+    let domPurifyFile = path.join(this.app.project.nodeModulesPath, 'dompurify/src/purify.js');
 
-    app.options.purify = app.options.purify ? app.options.purify : {};
+    if (this.app.env === 'production') {
+      domPurifyFile = path.join(this.app.project.nodeModulesPath, 'dompurify/dist/purify.min.js');
+    }
+
+    if (this.import) {
+      this.import(domPurifyFile);
+    } else {
+      app.import(domPurifyFile);
+    }
   }
 
 };
+
