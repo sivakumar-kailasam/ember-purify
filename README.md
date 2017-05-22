@@ -1,7 +1,7 @@
 # Ember-purify
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/sivakumar-kailasam/ember-purify.svg)](https://greenkeeper.io/)
-[![Travis CI Build Status](https://travis-ci.org/sivakumar-kailasam/ember-purify.svg?branch=master)](https://travis-ci.org/sivakumar-kailasam/ember-purify) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/h4kt3xi6axr4c3ep/branch/master?svg=true)](https://ci.appveyor.com/project/sivakumar-kailasam/ember-purify/branch/master) [![Dependency Status](https://www.versioneye.com/user/projects/57fc8eca9907da00390c4167/badge.svg)](https://www.versioneye.com/user/projects/57fc8eca9907da00390c4167) [![Ember Observer Score](http://emberobserver.com/badges/ember-purify.svg)](http://emberobserver.com/addons/ember-purify) ![Ember Version][ember-version] 
+[![Travis CI Build Status](https://travis-ci.org/sivakumar-kailasam/ember-purify.svg?branch=master)](https://travis-ci.org/sivakumar-kailasam/ember-purify) [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/h4kt3xi6axr4c3ep/branch/master?svg=true)](https://ci.appveyor.com/project/sivakumar-kailasam/ember-purify/branch/master) [![Ember Observer Score](http://emberobserver.com/badges/ember-purify.svg)](http://emberobserver.com/addons/ember-purify) ![Ember Version][ember-version] 
 
 When you need to render user provided HTML content but don't want to trust the user content with Ember's ` Ember.String.htmlSafe` or `{{{  }}}`.
 Uses [DOMPurify](https://github.com/cure53/DOMPurify/) to sanitize HTML & SVG. I strongly recommend you watch the video linked under the [inspiration](#inspiration) section. See XSS in action in Ember in [this twiddle](https://ember-twiddle.com/e41681e00585f3c94b461e349fee9ca1?fileTreeShown=false&numColumns=2&openFiles=templates.application.hbs%2Ccontrollers.application.js).
@@ -44,8 +44,7 @@ In addition to the global configuration you can also pass the config to the help
 
 * `git clone <repository-url>` this repository
 * `cd ember-purify`
-* `npm install`
-* `bower install`
+* `npm install` or `yarn`
 
 ## Running
 
