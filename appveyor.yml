@@ -2,9 +2,8 @@
 
 install:
   - npm install mocha-appveyor-reporter
-  - npm install -g bower phantomjs-prebuilt
+  - npm install -g phantomjs-prebuilt
   - npm install
-  - bower install
 
 # So that we don't build twice
 skip_tags: true
