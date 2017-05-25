@@ -16,6 +16,7 @@ ember install ember-purify
 
 ## Usage 
 
+For templates,
 ```handlebars
 {{purify-dom '<img src="missing-image.png" onerror=alert(1)//>'}}
 ```
@@ -23,7 +24,13 @@ will render
 ```html
 <img src="missing-image.png">
 ```
-If you need to use DOMPurify in your js, you can refer to the `DOMPurify` global object that's imported for you by this addon.
+
+To use it in js,
+```js
+import { sanitize } from 'dom-purify';
+```
+Note that global config isn't applied to the functions imported in JS.
+
 Details on DOMPurify, the underlying library can be found in its [README](https://github.com/cure53/DOMPurify/blob/master/README.md)
 
 ## Configuration
