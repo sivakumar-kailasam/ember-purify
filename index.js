@@ -1,25 +1,30 @@
 /* eslint-env node */
 'use strict';
 var path = require('path');
-
+var Funnel = require('broccoli-funnel');
+var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-purify',
 
+  // isDevelopingAddon: () => true,
+
   included: function(app) {
     this._super.included.apply(this, arguments);
 
-    let domPurifyFile = path.join(this.app.project.nodeModulesPath, 'dompurify/src/purify.js');
+    this.import('vendor/dom-purify/purify.min.js');
+    this.import('vendor/shims/dom-purify.js');
+  },
 
-    if (this.app.env === 'production') {
-      domPurifyFile = path.join(this.app.project.nodeModulesPath, 'dompurify/dist/purify.min.js');
-    }
+  treeForVendor(tree) {
+    let domPurifyPath = path.join(this.app.project.nodeModulesPath, 'dompurify/dist/');
 
-    if (this.import) {
-      this.import(domPurifyFile);
-    } else {
-      app.import(domPurifyFile);
-    }
+    let copiedTree = new Funnel(domPurifyPath, {
+      destDir: 'dom-purify',
+      files: ['purify.min.js', 'purify.min.js.map']
+    });
+
+    return mergeTrees([tree, copiedTree]);
   }
 
 };
