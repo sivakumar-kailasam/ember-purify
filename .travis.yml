@@ -1,3 +1,4 @@
+---
 language: node_js
 node_js:
   - "6"
@@ -36,9 +37,7 @@ before_install:
 
 install:
   - yarn install --no-lockfile --non-interactive
-
 script:
   # Usually, it's ok to finish the test scenario without reverting
   #  to the addon's original dependency state, skipping "cleanup".
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO --skip-cleanup
-

@@ -2,20 +2,43 @@
   "name": "ember-purify",
   "version": "4.1.0",
   "description": "Ember addon to help purify DOM content",
+  "keywords": [
+    "dom",
+    "ember-addon",
+    "filter",
+    "html-sanitizer",
+    "purify",
+    "sanitize",
+    "sanitizer",
+    "secure",
+    "security",
+    "svg",
+    "xss"
+  ],
+  "homepage": "https://github.com/sivakumar-kailasam/ember-purify#readme",
+  "bugs": {
+    "url": "https://github.com/sivakumar-kailasam/ember-purify/issues"
+  },
+  "license": "MIT",
+  "author": "Sivakumar Kailasam <siva@rubberduck.engineering>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "repository": "git+https://github.com/sivakumar-kailasam/ember-purify.git",
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
-    "test": "ember try:each"
+    "test": "ember test",
+    "test:all": "ember try:each"
   },
-  "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
+  "dependencies": {
+    "broccoli-funnel": "^2.0.0",
+    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-stew": "^1.5.0",
+    "dompurify": "^1.0.0",
+    "ember-cli-babel": "^6.6.0"
   },
-  "author": "Sivakumar Kailasam <sivakumar.ur.friend@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
     "ember-cli": "~2.18.0",
@@ -36,32 +59,10 @@
     "ember-source": "~2.17.0",
     "loader.js": "^4.5.1"
   },
-  "keywords": [
-    "ember-addon",
-    "xss",
-    "html-sanitizer",
-    "sanitize",
-    "sanitizer",
-    "dom",
-    "svg",
-    "secure",
-    "security",
-    "filter",
-    "purify"
-  ],
-  "dependencies": {
-    "broccoli-funnel": "^2.0.0",
-    "broccoli-merge-trees": "^2.0.0",
-    "broccoli-stew": "^1.5.0",
-    "dompurify": "^1.0.0",
-    "ember-cli-babel": "^6.6.0"
+  "engines": {
+    "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "repository": "git+https://github.com/sivakumar-kailasam/ember-purify.git",
-  "bugs": {
-    "url": "https://github.com/sivakumar-kailasam/ember-purify/issues"
-  },
-  "homepage": "https://github.com/sivakumar-kailasam/ember-purify#readme"
+  }
 }
