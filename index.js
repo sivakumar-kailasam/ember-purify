@@ -9,7 +9,7 @@ module.exports = {
 
   // isDevelopingAddon: () => true,
 
-  included: function(app) {
+  included: function() {
     this._super.included.apply(this, arguments);
 
     this.import('vendor/dom-purify/purify.min.js');
@@ -17,7 +17,7 @@ module.exports = {
   },
 
   treeForVendor(tree) {
-    let domPurifyPath = path.join(this.app.project.nodeModulesPath, 'dompurify/dist/');
+    let domPurifyPath = path.dirname(require.resolve('dompurify'));
 
     let copiedTree = new Funnel(domPurifyPath, {
       destDir: 'dom-purify',
@@ -28,4 +28,3 @@ module.exports = {
   }
 
 };
-
