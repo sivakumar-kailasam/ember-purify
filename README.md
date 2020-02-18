@@ -1,6 +1,5 @@
 # Ember-purify
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/sivakumar-kailasam/ember-purify.svg)](https://greenkeeper.io/)
 [![Travis CI Build Status](https://travis-ci.org/sivakumar-kailasam/ember-purify.svg?branch=master)](https://travis-ci.org/sivakumar-kailasam/ember-purify) [![Ember Observer Score](http://emberobserver.com/badges/ember-purify.svg)](http://emberobserver.com/addons/ember-purify) 
 
 When you need to render user provided HTML content but don't want to trust the user content with Ember's ` Ember.String.htmlSafe` or `{{{  }}}`.
@@ -27,7 +26,7 @@ will render
 
 To use it in js,
 ```js
-import { sanitize } from 'dom-purify';
+import { sanitize } from 'dompurify';
 ```
 Note that global config isn't applied to the functions imported in JS.
 
