@@ -1,13 +1,21 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { htmlSafe } from '@ember/template';
 
-export default Ember.Controller.extend({
-    htmlContent: '<img src="missing-image.png"  data-something="dangerous" onerror=console.log(1)//><b>Great</b>',
+const imgUrl = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/45544/icon-tomster.png';
 
-    safeStringContent: Ember.computed(function() {
-        return Ember.String.htmlSafe('<img src="missing-image.png" onerror=console.log(2)//>');
-    }),
+export default class ApplicationController extends Controller {
 
-    customConfig: {
-        ALLOWED_TAGS: ['img']
-    }
-});
+  get htmlContent(){
+    return `<img src="${imgUrl}"  data-something="dangerous" onload=console.log("triple-curlies")//><b>Tomster</b>`;
+  }
+
+  get safeStringContent() {
+    return htmlSafe(
+      `<img src="${imgUrl}"  data-something="dangerous" onload=console.log("safe-string")//><b>Tomster</b>`
+    );
+  }
+
+  customConfig = {
+    ALLOWED_TAGS: ["img"]
+  };
+}

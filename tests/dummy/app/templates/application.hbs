@@ -1,16 +1,34 @@
-The following are image tags with an invalid image url which will trigger its <code>onerror()</code> when available,
+<h1>Ember Purify</h1>
+<section>
+  <p>The following are image tags with an invalid image url which will trigger its <code>onerror()</code> when available,</p>
+</section>
 
-<div>
-  Added to page via triple {} - {{{htmlContent}}}
-</div>
-<div>
-  Added to page via safeString - {{safeStringContent}}
-</div>
-<div>
-  Added to page with dom purify - {{purify-dom htmlContent}}
-</div>
+<section>
+  <table>
+    <thead>
+        <th>Method</th>
+        <th>Result</th>
+      </thead>
+    <tbody>
+      <tr>
+        <td><code>\{{{}}}</code></td>
+        {{!-- template-lint-disable no-triple-curlies --}}
+        <td>{{{this.htmlContent}}}</td>
+      </tr>
+      <tr>
+        <td><code>SafeString</code></td>
+        <td>{{this.safeStringContent}}</td>
+      </tr>
+      <tr>
+        <td><code>\{{purify-dom}}</code></td>
+        <td>{{purify-dom this.htmlContent}}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-<div>
-  In addition to the global config, you can now additionally pass a config hash,
-  {{purify-dom htmlContent config=customConfig overrideConfig=true}}
-</div>
+<section>
+  <p>In addition to the global config, you can now additionally pass a config hash. In this example we're only allowing <code>img</code> tags, so the bold text will show up as regular text:</p>
+  <p>
+  {{purify-dom this.htmlContent config=this.customConfig overrideConfig=true}}</p>
+</section>

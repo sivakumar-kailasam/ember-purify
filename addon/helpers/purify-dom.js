@@ -1,27 +1,31 @@
-import Ember from 'ember';
-
-const {
-    isPresent,
-    merge,
-    Helper,
-    String: { htmlSafe }
-} = Ember;
-const { sanitize } = DOMPurify;
+import Helper from "@ember/component/helper";
+import { isPresent } from "@ember/utils";
+import { assign } from "@ember/polyfills";
+import { htmlSafe } from "@ember/template";
+import { inject as service } from "@ember/service";
+import { sanitize } from "dompurify";
+import { computed, getWithDefault } from "@ember/object";
 
 export default Helper.extend({
+  appConfig: service('config'),
 
-    compute([text = ''], { config: localConfig, overrideConfig = false }) {
-        let purifyConfig = this.get('config');
+  config: computed('appConfig.APP.{purify}', function() {
+    return getWithDefault(this, 'appConfig.APP.purify', {});
+  }),
 
-        if (isPresent(localConfig)) {
-            if (overrideConfig) {
-                purifyConfig = localConfig;
-            } else {
-                purifyConfig = merge(localConfig, purifyConfig);
-            }
-        }
+  compute([text = ""], { config: localConfig, overrideConfig = false }) {
+    let purifyConfig;
 
-        return htmlSafe(sanitize(text, purifyConfig));
+    if (isPresent(localConfig)) {
+      if (overrideConfig) {
+        purifyConfig = localConfig;
+      } else {
+        purifyConfig = assign(localConfig, this.config);
+      }
+    } else {
+      purifyConfig = this.config;
     }
 
+    return htmlSafe(sanitize(text, purifyConfig));
+  }
 });
